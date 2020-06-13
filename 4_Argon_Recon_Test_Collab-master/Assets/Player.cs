@@ -23,6 +23,16 @@ public class Player : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        print ("Player Collided with enemy");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Player Triggered Something");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -52,7 +62,7 @@ public class Player : MonoBehaviour
         float xOffsetThisFrame = xThrow * speed * Time.deltaTime; //how many centermiters do i need to move in this frame
         float yOffsetThisFrame = yThrow * speed * Time.deltaTime; //how many centermiters do i need to move in this frame
 
-        Debug.Log(yOffsetThisFrame);
+        //Debug.Log(yOffsetThisFrame);
 
         float rawXPos = transform.localPosition.x + xOffsetThisFrame;
         float rawYPos = transform.localPosition.y + yOffsetThisFrame;

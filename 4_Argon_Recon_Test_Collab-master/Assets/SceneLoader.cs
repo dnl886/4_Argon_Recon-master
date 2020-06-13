@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Next_Level : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
     // Start is called before the first frame update
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
     void Start()
     {
         Invoke("LoadNextScene", 2f);
