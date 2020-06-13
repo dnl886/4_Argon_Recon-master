@@ -14,9 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] float controlPitchFactor = -20;
 
     [SerializeField] float positionYawFactor = 5f;
-    //[SerializeField] float controlYawFactor = -30;
-
-    //[SerializeField] float positionRollFactor = -5f;
+    
     [SerializeField] float controlRollFactor = -20;
 
     float xThrow, yThrow;
@@ -48,8 +46,8 @@ public class Player : MonoBehaviour
 
     void ProcessTranslations()
     {
-        xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
-        yThrow = CrossPlatformInputManager.GetAxis("Vertical");
+        xThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // the offset is simply how much do we want to move left and right in this frame
+        yThrow = CrossPlatformInputManager.GetAxis("Vertical");   //// the offset is simply how much do we want to move left and right in this frame
 
         float xOffsetThisFrame = xThrow * speed * Time.deltaTime; //how many centermiters do i need to move in this frame
         float yOffsetThisFrame = yThrow * speed * Time.deltaTime; //how many centermiters do i need to move in this frame
